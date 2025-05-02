@@ -62,7 +62,7 @@ body::before {
 }
 
 .todo_list,
-.new_note {
+.new_todo {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -84,7 +84,7 @@ body::before {
 }
 
 /* New Note */
-.new_note {
+.new_todo {
   padding: 1rem 1.5rem;
   margin-bottom: 1rem;
   display: flex;
@@ -92,7 +92,7 @@ body::before {
   gap: 2rem;
 }
 
-.new_note i {
+.new_todo i {
   color: var(--Dark-Grayish-Blue);
 }
 input[type='text'] {
@@ -117,8 +117,11 @@ input[type='text']::placeholder {
   border: 1px solid #4d4d6b;
   cursor: pointer;
 }
+#title-checkbox {
+  cursor: default;
+}
 
-.todo-checkbox.checked {
+.todo-checkbox.completed {
   background: linear-gradient(135deg, #55ddff, #c058f3);
   border: none;
   display: flex;
@@ -126,7 +129,7 @@ input[type='text']::placeholder {
   justify-content: center;
 }
 
-.todo-checkbox.checked::after {
+.todo-checkbox.completed::after {
   content: '';
   display: block;
   width: 8px;
@@ -136,12 +139,17 @@ input[type='text']::placeholder {
   transform: rotate(-45deg) translate(1px, -2px);
 }
 
+.todoText.completed {
+  text-decoration: line-through;
+  color: #4d4d6b;
+}
+
 /* Note List */
 .todo_list {
   margin-bottom: 1rem;
 }
 
-ul li {
+li {
   list-style: none;
   display: flex;
   align-items: center;
@@ -159,7 +167,7 @@ ul li {
   padding: 1.5rem;
 }
 
-.items_letf {
+.items_left {
   color: var(--Dark-Grayish-Blue);
   font-size: 0.875rem;
   color: #5b5e7e;
@@ -179,7 +187,7 @@ ul li {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.mobile-filters {
+#mobile-filters {
   display: none;
   justify-content: center;
   gap: 1rem;
@@ -200,7 +208,7 @@ ul li {
   color: #e4e5f1;
 }
 .note_btns,
-.new_note,
+.new_todo,
 .todo_list {
   background-color: var(--Very-Dark-Desaturated-Blue);
   border-radius: 10px;
@@ -223,7 +231,7 @@ ul li {
     display: none;
   }
 
-  .mobile-filters {
+  #mobile-filters {
     display: flex;
   }
 }

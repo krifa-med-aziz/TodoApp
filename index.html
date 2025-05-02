@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo app</title>
     <link rel="stylesheet" href="./src/css/main.css" />
-    <script defer type="module" src="./src/js/script.js"></script>
+    <script defer src="./src/js/script.js"></script>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,36 +31,16 @@
             <img src="./src/img/icon-moon.svg" alt="moon" />
           </button>
         </header>
-        <div class="new_note">
-          <div class="todo-checkbox"></div>
-          <input type="text" placeholder="Create a new todo..." />
-        </div>
+
+        <form class="new_todo" id="todoForm">
+          <div class="todo-checkbox" id="title-checkbox"></div>
+          <input id="new_todo" type="text" placeholder="Create a new todo..." />
+        </form>
+
         <div class="todo_list">
-          <ul>
-            <li class="note">
-              <div class="todo-checkbox"></div>
-              <span
-                >uscipit placeat eius quas voluptates, minus eveniet possimus
-                quos. Distinctio</span
-              >
-            </li>
-            <li class="note">
-              <div class="todo-checkbox"></div>
-              <span
-                >uscipit placeat eius quas voluptates, minus eveniet possimus
-                quos. Distinctio</span
-              >
-            </li>
-            <li class="note">
-              <div class="todo-checkbox checked"></div>
-              <span
-                >uscipit placeat eius quas voluptates, minus eveniet possimus
-                quos. Distinctio</span
-              >
-            </li>
-          </ul>
+          <ul class="todo-items"></ul>
           <div class="note_btns">
-            <div class="items_letf">
+            <div class="items_left">
               <p>5 items left</p>
             </div>
             <div class="filter_btn">
@@ -73,11 +53,13 @@
             </div>
           </div>
         </div>
-        <div class="mobile-filters">
+
+        <di class="filter_btn" id="mobile-filters">
           <button class="btn active">All</button>
           <button class="btn">Active</button>
           <button class="btn">Completed</button>
-        </div>
+        </di>
+
         <div class="todo_footer">
           <p>
             Made with 💙 by
