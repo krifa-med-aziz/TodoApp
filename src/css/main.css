@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root {
-  --Light-Gray: hsl(0, 0%, 98%);
+  --Light-Gray: #fafafa;
   --Dark-Blue: hsl(235, 21%, 11%);
   --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
@@ -14,7 +14,6 @@
 
 body {
   font-size: 18px;
-  background-color: var(--Dark-Blue);
   min-height: 100vh;
   font-family: 'Josefin Sans', sans-serif;
   position: relative;
@@ -27,12 +26,29 @@ body::before {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('../img/bg-desktop-dark.jpg');
-  background-size: 100% 30%;
+  width: 100%;
+  height: 225px;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: -1;
+}
+
+body.dark {
+  background-color: var(--Dark-Blue);
+}
+
+body.light {
+  background-color: var(--Light-Gray);
+}
+
+body.dark::before {
+  background-image: url('../img/bg-desktop-dark.jpg');
+  background-color: var(--Dark-Blue);
+}
+
+body.light::before {
+  background-image: url('../img/bg-desktop-light.jpg');
+  background-color: var(--Light-Gray);
 }
 
 .hidden {
@@ -81,6 +97,7 @@ body::before {
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 /* New Note */
@@ -144,7 +161,12 @@ input[type='text']::placeholder {
   color: #4d4d6b;
 }
 
-/* Note List */
+.todoText.completedLight {
+  text-decoration: line-through;
+  color: #cacde8;
+}
+
+/* Todo List */
 .todo_list {
   margin-bottom: 1rem;
 }
@@ -160,6 +182,26 @@ li {
   font-size: 20px;
   color: #cacde8;
   line-height: 1.5;
+}
+
+li.light {
+  color: #4d4d6b;
+}
+
+.todoText_Conatiner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove_btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: rgb(227, 56, 56);
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* Note Btns */
@@ -207,11 +249,16 @@ li {
 .btn:hover {
   color: #e4e5f1;
 }
-.note_btns,
+
 .new_todo,
 .todo_list {
   background-color: var(--Very-Dark-Desaturated-Blue);
   border-radius: 10px;
+}
+.new_todo.light,
+.note_btns.light,
+.todo_list.light {
+  background-color: white;
 }
 
 /* Footer */

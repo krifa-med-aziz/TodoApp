@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo app</title>
     <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="shortcut icon" href="./src/img/favicon-32x32.png" />
     <script defer src="./src/js/script.js"></script>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,13 +23,18 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
+  <body class="dark">
     <div class="app-conatiner">
       <div class="todo-list-container">
         <header class="title">
           <h1>T O D O</h1>
           <button class="toggle_theme">
-            <img src="./src/img/icon-moon.svg" alt="moon" />
+            <img
+              id="theme_icon"
+              src="./src/img/icon-moon.svg"
+              alt="moon"
+              data-theme="dark"
+            />
           </button>
         </header>
 
@@ -54,11 +60,11 @@
           </div>
         </div>
 
-        <di class="filter_btn" id="mobile-filters">
+        <div class="filter_btn" id="mobile-filters">
           <button class="btn active">All</button>
           <button class="btn">Active</button>
           <button class="btn">Completed</button>
-        </di>
+        </div>
 
         <div class="todo_footer">
           <p>
